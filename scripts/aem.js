@@ -156,6 +156,12 @@ function init() {
   setup();
   sampleRUM('top');
 
+  // Add the universal editor script
+  const script = document.createElement('script');
+  script.src = 'https://universal-editor-service.adobe.io/cors.js';
+  script.async = true;
+  document.head.appendChild(script);
+
   window.addEventListener('load', () => sampleRUM('load'));
 
   window.addEventListener('unhandledrejection', (event) => {
